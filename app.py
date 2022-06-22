@@ -41,7 +41,7 @@ def query_results():
         if link['href'].startswith("/url?q=") and query_site in link['href']:
             valid_result = urllib.parse.unquote(
                 link['href'].split("url?q=")[1].split("&sa=")[0])
-            if valid_result not in valid_links:
+            if valid_result not in valid_links and valid_result.startswith("http"):
                 valid_links.append(valid_result)
 
     output = f"<script>console.log('{target_url}')</script>"
