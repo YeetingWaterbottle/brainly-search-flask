@@ -44,7 +44,7 @@ def query_results():
             if valid_result not in valid_links:
                 valid_links.append(valid_result)
 
-    output = f"<strong>{target_url}</strong><br><br>"
+    output = f"<script>console.log('{target_url}')</script>"
 
     for link in valid_links[:-1]:
         output += f"<a target='_blank' rel='noopener noreferrer' href='{link}'>{link}</a><br><br>"
