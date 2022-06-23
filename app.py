@@ -24,7 +24,7 @@ def query_results():
         target_url += urllib.parse.quote_plus(query_input)
 
     if query_site != "":
-        target_url += f"+site:{query_site}"
+        target_url += f"+site:{query_site.lower()}"
 
     if result_number != "":
         target_url += f"&num={result_number}"
