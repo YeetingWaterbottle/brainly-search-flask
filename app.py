@@ -45,6 +45,7 @@ def query_results():
                 valid_links.append(valid_result)
 
     output = f"<script>console.log('{target_url}')</script>"
+    output += f"<h2><strong>Search Result: {query_input}</strong></h2>"
 
     for link in valid_links[:-1]:
         output += f"<a target='_blank' rel='noopener noreferrer' href='{link}'>{link}</a><br><br>"
