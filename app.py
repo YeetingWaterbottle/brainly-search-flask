@@ -47,10 +47,17 @@ def query_results():
     output = f"<script>console.log('{target_url}')</script>"
     output += f"<h2><strong>Search Result: {query_input}</strong></h2>"
 
-    for link in valid_links[:-1]:
+    valid_links.pop()
+
+    for link in valid_links:
         output += f"<a target='_blank' rel='noopener noreferrer' href='{link}'>{link}</a><br><br>"
 
-    output += f"<script>window.open('{valid_links[0]}', '_blank').focus()</script>"
+    if valid_links != []:
+        output += f"<script>window.open('{valid_links[0]}', '_blank').focus()</script>"
+
+    else:
+        output += "<h2>No Results Came Back</h2>"
+
 
     return render_template("index.html", result=Markup(output))
 
