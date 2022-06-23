@@ -17,14 +17,14 @@ def query_results():
     target_url = "https://www.google.com/search?q="
 
     query_input = request.form["query_input"]
-    query_site = request.form["query_site"]
+    query_site = request.form["query_site"].lower()
     result_number = request.form["result_number"]
 
     if query_input != "":
         target_url += urllib.parse.quote_plus(query_input)
 
     if query_site != "":
-        target_url += f"+site:{query_site.lower()}"
+        target_url += f"+site:{query_site}"
 
     if result_number != "":
         target_url += f"&num={result_number}"
