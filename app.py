@@ -17,14 +17,16 @@ def query_results():
     target_url = "https://www.google.com/search?q="
 
     query_input = request.form["query_input"]
-    query_site = request.form["query_site"].lower()
+    query_site = request.form["query_site"].lower().split(" ")
     result_number = request.form["result_number"]
 
     if query_input != "":
         target_url += urllib.parse.quote_plus(query_input)
 
-    if query_site != "":
-        target_url += f"+site:{query_site}"
+    if query_site != []:
+        for site in query_site[:-1]:
+            target_url += f"+site:{site}+OR"
+        target_url += f"+site:{query_site[-1]}"
 
     if result_number != "":
         target_url += f"&num={result_number}"
@@ -38,7 +40,7 @@ def query_results():
     valid_links = []
 
     for link in links:
-        if link['href'].startswith("/url?q=") and query_site in link['href']:
+        if link['href'].startswith("/url?q=") and any(site in link['href'] for site in query_site):
             valid_result = urllib.parse.unquote(
                 link['href'].split("url?q=")[1].split("&sa=")[0])
             if valid_result not in valid_links and valid_result.startswith("http"):
