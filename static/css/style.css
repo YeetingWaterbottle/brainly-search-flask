@@ -1,0 +1,79 @@
+body {
+    font-family: Roboto, arial, sans-serif;
+    text-align: center;
+    background-color: rgb(25, 25, 25);
+}
+
+a {
+    color: rgb(83, 126, 197);
+    margin: 1rem;
+    text-decoration: none;
+}
+
+form {
+    padding: 1rem;
+}
+
+input {
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    background-color: rgb(236, 219, 186);
+    border: none;
+    border-radius: 10px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+h1 {
+    color: rgb(233, 166, 166);
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: rgb(221, 221, 221);
+    padding: 1rem;
+}
+
+h3 {
+    color: rgb(221, 221, 221);
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 6.5rem;
+    max-height: 6.5rem;
+    overflow-y: auto;
+    height: auto;
+    background: rgb(41, 58, 128);
+}
+
+footer a {
+    color: rgb(243, 148, 34);
+    margin-top: 0;
+    display: inline-block;
+}
+
+.warning {
+    color: rgb(200, 75, 49);
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+}

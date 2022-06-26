@@ -4,62 +4,14 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style>
-            body {
-                font-family: Roboto, arial, sans-serif;
-                text-align: center;
-                background-color: rgb(25, 25, 25);
-            }
-            a {
-                color: rgb(83, 126, 197);
-                padding: 1rem;
-                text-decoration: none;
-            }
-            form {
-                padding: 1rem;
-            }
-            input {
-                padding: 1rem;
-                margin: 1rem;
-                text-align: center;
-                background-color: rgb(236, 219, 186);
-                border: none;
-                border-radius: 10px;
-            }
-            input[type="number"]::-webkit-inner-spin-button,
-            input[type="number"]::-webkit-outer-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-            h1 {
-                color: rgb(233, 166, 166);
-                font-size: 2.5rem;
-            }
-            h2 {
-                color: rgb(221, 221, 221);
-                padding: 1rem;
-            }
-            h3 {
-                color: rgb(221, 221, 221);
-            }
-            footer {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                height: 6.5rem;
-                background: rgb(41, 58, 128);
-            }
-            footer a {
-                color: rgb(243, 148, 34);
-            }
-        </style>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
         <title>Brainly Search</title>
     </head>
+
     <body>
-        <a href="/"><h1>Input Query</h1></a>
+        <a href="/"><h1>Search</h1></a>
         <form id="query_form" action="#" method="POST">
-            <input type="text" name="query_input" placeholder="Query Input" onpaste="submit_query()" autofocus autocomplete="false" />
+            <input type="text" name="query_input" placeholder="Search Input" onpaste="submit_query()" autofocus autocomplete="false" />
             <input type="text" name="query_site" placeholder="Specify Site" value="brainly.com quizlet.com" autocomplete="false" />
             <input type="number" name="result_number" placeholder="Result Number" value="5" min="1" max="100" autocomplete="false" />
             <input type="submit" value="Google Search" />
@@ -72,6 +24,9 @@
             <a target="_blank" rel="noopener noreferrer" href="https://wordcounter.net/">Word Counter</a>
             <a target="_blank" rel="noopener noreferrer" href="http://www.textinflator.com/">Text Inflator</a>
             <a target="_blank" rel="noopener noreferrer" href="https://www.textcompactor.com/">Text Compator</a>
+            <a class="warning" target="_blank" rel="noopener noreferrer" href="https://www.tampermonkey.net/">Tampermonkey</a>
+            <a class="warning" target="_blank" rel="noopener noreferrer" href="https://greasyfork.org/en/scripts/422892-brainly-unlocker"> Brainly Answer Unlocker (Require Tampermonkey) </a>
+            <a class="warning" target="_blank" rel="noopener noreferrer" href="https://greasyfork.org/en/scripts/447040-quizlet-show-hidden-flashcards"> Show Hidden Quizlet Flash Cards Without Logging in (Require Tampermonkey) </a>
         </footer>
 
         <script>
