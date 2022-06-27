@@ -8,10 +8,10 @@
         <title>Brainly Search</title>
     </head>
 
-    <body>
+    <body onpaste="submit_query()">
         <a href="/"><h1>Search</h1></a>
         <form id="query_form" action="#" method="POST">
-            <input type="text" name="query_input" placeholder="Search Input" onpaste="submit_query()" autofocus autocomplete="false" />
+            <input type="text" name="query_input" placeholder="Search Input" autofocus autocomplete="false" />
             <input type="text" name="query_site" placeholder="Specify Site" value="brainly.com quizlet.com" autocomplete="false" />
             <input type="number" name="result_number" placeholder="Result Number" value="5" min="1" max="100" autocomplete="false" />
             <input type="submit" value="Google Search" />
@@ -31,6 +31,7 @@
 
         <script>
             function submit_query() {
+                document.getElementsByName("query_input")[0].focus()
                 setTimeout(() => {
                     document.getElementById("query_form").submit();
                 });
