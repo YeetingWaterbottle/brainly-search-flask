@@ -4,4 +4,4 @@ A simple site to search questions on brainly, automatically searches after pasti
 # Install Instructions  
 Install Python 3 https://www.python.org/downloads/  
 Run setup.py to Install Required Modules  
-Run app.py to Start the Site and Access it With 127.0.0.1:5000  
+Run app.py to Start the Site and Access it With http://127.0.0.1:5000  
