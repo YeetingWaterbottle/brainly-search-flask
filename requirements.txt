@@ -1,0 +1,4 @@
+bs4
+markupsafe
+requests
+flask

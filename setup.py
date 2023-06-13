@@ -1,4 +1,6 @@
 import os
 import sys
 
-os.system(f"{sys.executable} -m pip install bs4 markupsafe requests flask")
+os.system(f"{sys.executable} -m pip install -r requirements.txt")
+
+input("Press enter the exit...")
